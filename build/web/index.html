@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="portafolio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Young Lely 👾🥸</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    var serviceWorkerVersion = "4280974331";
+  </script>
+  <script src="flutter.js" defer></script>
+  <style>
+    body {
+      overflow-y: hidden;
+      background: black;
+      height: 100vh;
+      display: flex;
+    }
+
+    .loader {
+      display: inline-grid;
+      font-size: 100px;
+    }
+
+    .loader:before,
+    .loader:after {
+      content: "👾👾👾";
+      grid-area: 4/4;
+    }
+
+    .loader:after {
+      animation: l10 1s infinite;
+    }
+
+    @keyframes l10 {
+      to {
+        transform: scale(1.8);
+        opacity: 0
+      }
+    }
+
+    div.loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+
+  <div class="loader"></div>
+</body>
+
+</html>
